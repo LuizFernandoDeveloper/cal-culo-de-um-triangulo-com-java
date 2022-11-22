@@ -1,5 +1,8 @@
+package application;
 import java.util.Locale;
 import java.util.Scanner;
+
+import application.entities.Triangle;
 
 //problama exemplo
 /*
@@ -14,22 +17,20 @@ public class App {
     public static void main(String[] args) throws Exception {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        double xA, xB, xC, yA, yB, yC;
+        Triangle x, y;
+        x = new Triangle();
+        y = new Triangle();
         System.out.println("Enter the measure of triangle X:");
-        xA = sc.nextDouble();
-        xB = sc.nextDouble();
-        xC = sc.nextDouble();
+        x.a = sc.nextDouble();
+        x.b = sc.nextDouble();
+        x.c = sc.nextDouble();
         System.out.println("Enter the measure of triangle Y:");
-        yA = sc.nextDouble();
-        yB = sc.nextDouble();
-        yC = sc.nextDouble();
-        double pX = ((xA + xB + xC) / 2.0);
-        double areaX = Math.sqrt(pX * (pX - xA) * (pX- xB) * (pX - xC));
-        double pY = ((yA + yB + yC) / 2.0);
-        double areaY = Math.sqrt(pY * (pY - yA) * (pY - yB) * (pY - yC));
-        System.out.printf("Triangle X area: %.4f%n", areaX);
-        System.out.printf("Trinagle Y area: %.4f%n", areaY);
-        if(areaX > areaY){
+        y.a = sc.nextDouble();
+        y.b = sc.nextDouble();
+        y.c = sc.nextDouble();
+        System.out.printf("Triangle X area: %.4f%n", x.area());
+        System.out.printf("Trinagle Y area: %.4f%n", y.area());
+        if(x.area() > y.area()){
             System.out.println("Large area: X");
         }
         else{
